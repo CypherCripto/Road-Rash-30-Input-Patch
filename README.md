@@ -12,19 +12,32 @@ on their own installation. Other machines, controller models, connections,
 video cases and game versions need testing. Diagonal D-pad inputs are not mapped.
 Changes are all enabled together; this is not a settings application.
 
-## Build and use
+## Installation
 
-Build on Windows with .NET Framework 4.x C# compiler:
+1. [Download RoadRashInputFix.exe](https://github.com/CypherCripto/Road-Rash-30-Input-Patch/raw/refs/heads/main/RoadRashInputFix.exe).
+2. Copy it into the game installation folder, next to `RoadRash95.exe`.
+3. Start the game using `RoadRashInputFix.exe`.
 
-```
+The game must be purchased and installed separately. The original game executable
+is not changed on disk. The player tested the original local launcher with
+MultiFix installed; this portable build has been compiled but has not yet been
+tested in a separate installation. Other setups require testing.
+
+This patch targets the game executable with the SHA-256 hash listed above.
+The launcher also verifies the expected code bytes before applying its changes.
+It does not install MultiFix or change existing MultiFix settings.
+
+## Uninstall
+
+Delete `RoadRashInputFix.exe` from the game folder and launch the game normally.
+
+## Build from source (optional)
+
+On Windows, using the .NET Framework 4.x C# compiler:
+
+```bat
 %WINDIR%\Microsoft.NET\Framework\v4.0.30319\csc.exe /nologo /target:winexe /platform:x86 /optimize+ /reference:System.Windows.Forms.dll /out:RoadRashInputFix.exe RoadRashInputFixLauncher.cs
 ```
-
-Put the built `RoadRashInputFix.exe` beside `RoadRash95.exe`, then start the
-game through that launcher. Verify that the game's SHA-256 matches the value
-above. The launcher checks the bytes it changes and aborts if they differ.
-To remove it, delete only `RoadRashInputFix.exe` and start the game normally.
-It does not install MultiFix or change existing MultiFix settings.
 
 The launcher uses normal process-memory patching techniques, including making
 code writable. Security software may flag this behavior. Do not disable

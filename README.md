@@ -27,6 +27,8 @@ This patch targets the game executable with the SHA-256 hash listed above.
 The launcher also verifies the expected code bytes before applying its changes.
 It does not install MultiFix or change existing MultiFix settings.
 
+**Steam users:** You may need to disable Steam Input for this game in the controller settings to use the controller's native compatibility.
+
 ## Uninstall
 
 Delete `RoadRashInputFix.exe` from the game folder and launch the game normally.
